@@ -31,7 +31,7 @@ const Greetings = () => {
         }
     };
     const userGreeted = name => !greeted.includes(name) && greeted.push(name);
-    const validUserName = name => /^[a-z]{3,}$/i.test(name);
+    const validUserName = name => /^[a-z]{3,}$/i.test(name.trim());
     const resetName = () => userName = "";
     const getLength = () => getGreetedUsers().length;
 
