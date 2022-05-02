@@ -2,6 +2,7 @@
 const myform = document.querySelector("#myform");
 const user_input = document.querySelector("#user-input");
 const submit_greet = document.querySelector("#submit-greet");
+const reset_greet = document.querySelector("#reset-greet");
 const output_greet = document.querySelector("#output-greet");
 const counter = document.querySelector("#counter");
 
@@ -44,4 +45,11 @@ submit_greet.addEventListener("click", (e) => {
 
     // reset for fields
     formReset();
+});
+
+// when the reset button is clicked the page will reload 
+// which will reset the counter from thhe factory function
+// add logic to reset without the help of the page refreshing
+reset_greet.addEventListener("click", () => {
+    localStorage.clear("greetedUsers");
 });
