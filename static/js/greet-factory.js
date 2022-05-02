@@ -11,8 +11,8 @@ const Greetings = () => {
     const greeted = [];
 
     // set me
-    const setUserName = name => userName = validUserName(name) ? `${name.trim()[0].toUpperCase()+name.trim().toLowerCase().slice(1)}`:"";
-    const setGreetLanguage = language => greetLanguage = greets[language];
+    const setUserName = name => userName = validUserName(name) ? `${name.trim()[0].toUpperCase()+name.trim().toLowerCase().slice(1)}`:"Invalid name given!";
+    const setGreetLanguage = language => greetLanguage = greets[language.toLowerCase()];
 
     // get me
     const getUserName = () => userName;
@@ -21,13 +21,13 @@ const Greetings = () => {
 
     // use me
     const makeGreet = () => {
-        if(getGreetLanguage() === undefined){
+        if(getGreetLanguage() === undefined || getGreetLanguage() === ""){
             return "Invalid language specified!"
-        } else if(getUserName() !== ""){
+        } else if(getUserName() === "" || getUserName() === "Invalid name given!"){
+            return "Invalid name given!";
+        } else {
             userGreeted(getUserName());
             return `${getGreetLanguage()}, ${getUserName()}`
-        } else {
-            return "Invalid name given!";
         }
     };
     const userGreeted = name => !greeted.includes(name) && greeted.push(name);
