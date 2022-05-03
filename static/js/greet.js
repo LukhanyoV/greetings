@@ -45,11 +45,15 @@ submit_greet.addEventListener("click", (e) => {
 
     // reset for fields
     formReset();
+    clearMessage();
 });
 
 // when the reset button is clicked the page will reload 
 // which will reset the counter from thhe factory function
 // add logic to reset without the help of the page refreshing
 reset_greet.addEventListener("click", () => {
+    alert("Reset successful");
     localStorage.clear("greetedUsers");
 });
+
+const clearMessage = () => setTimeout(() => output_greet.textContent = "",3000);
