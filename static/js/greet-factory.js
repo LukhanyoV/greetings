@@ -12,7 +12,7 @@ const Greetings = () => {
 
     // set me
     const setUserName = name => userName = validUserName(name) ? `${name.trim()[0].toUpperCase()+name.trim().toLowerCase().slice(1)}`:"Invalid name given!";
-    const setGreetLanguage = language => greetLanguage = greets[language.toLowerCase()];
+    const setGreetLanguage = language => greetLanguage = greets[language];
 
     // get me
     const getUserName = () => userName;
