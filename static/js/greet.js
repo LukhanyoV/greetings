@@ -21,7 +21,7 @@ getPersistedUsers() !== null && getPersistedUsers().forEach(element => {
 });
 
 // reset output on load
-output_greet.textContent = "";
+// output_greet.textContent = "";
 counter.textContent = greetMe.getLength();
 
 // handle submit button click event
@@ -56,4 +56,4 @@ reset_greet.addEventListener("click", () => {
     localStorage.clear("greetedUsers");
 });
 
-const clearMessage = () => setTimeout(() => output_greet.textContent = "",3000);
+const clearMessage = () => setTimeout(() => output_greet.innerHTML = "&copy;LukhanyoV",3000);

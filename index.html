@@ -4,37 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./static/grid/simple-grid.min.css">
+    <!-- <link rel="stylesheet" href="./static/grid/simple-grid.min.css"> -->
     <link rel="stylesheet" href="./static/css/greet.css">
     <title>Greetings</title>
 </head>
 <body>
     <div class="container">
         <div class="greet-form">
+            <h1 style="text-align: center">Greetings</h1>
             <form id="myform">
-                <h2>Greetings</h2>
                 <div class="row">
-                    <div class="col-12">
-                        <label for="user-input"><span>Name:</span> 
-                            <input type="text" id="user-input">
-                        </label>
+                    <h2>Name:</h2>
+                    <div class="input">
+                        <input type="text" id="user-input">
                         <span id="counter">0</span>
                     </div>
                 </div>
-                <div class="row">
-                   <div class="col-12">
-                    <input type="radio" name="language" value="english">English
-                    <input type="radio" name="language" value="isixhosa">IsiXhosa
-                    <input type="radio" name="language" value="afrikaans">Afrikaans
-                   </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <button id="submit-greet">Greet Me</button>
-                        <button id="reset-greet">Reset Me</button>
+                
+                <div class="row language">
+                    <div>
+                        <p>Please pick a language to greet in:</p>
+                    </div>
+                    <div>
+                        <input type="radio" name="language" value="english">English
+                        <input type="radio" name="language" value="isixhosa">IsiXhosa
+                        <input type="radio" name="language" value="afrikaans">Afrikaans
                     </div>
                 </div>
-                <p id="output-greet">Hello, Lukhanyo</p>
+                    
+                <div class="row buttons">
+                    <button id="submit-greet">Greet Me</button>
+                    <button id="reset-greet">Reset Me</button>
+                </div>
+
+                <p id="output-greet">&copy; LukhanyoV</p>
             </form>
         </div>
     </div>
