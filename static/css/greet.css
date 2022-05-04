@@ -71,3 +71,9 @@ body, html {
     line-height: 4em;
     text-align: center;
 }
+
+@media screen and (max-width: 480px) {
+    .getname {
+        flex-direction: column;
+    }
+}
