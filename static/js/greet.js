@@ -24,7 +24,7 @@ document.querySelector(".container").append(ul);
 const addMe = me => {
     let li = document.createElement("li");
     li.classList.add("span-list");
-    li.textContent = `${me}`;
+    li.textContent = `${greetMe.getLength()}. ${me}`;
     document.querySelector(".greetedUsers").appendChild(li);
 }
 

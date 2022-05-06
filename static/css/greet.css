@@ -92,8 +92,10 @@ body, html {
 
 .greetedUsers {
     display: flex;
-    justify-content: center;
-    width: 80%;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    /* width: 84%; */
     flex-wrap: wrap;
     list-style: none;
 }
@@ -102,5 +104,11 @@ body, html {
     border: 1px solid saddlebrown;
     background-color: white;
     padding: 0.5em;
-    margin-right: 1em;
+    /* margin-right: 1em; */
+    width: 100px;
+    /* margin: 0 auto; */
+}
+
+.container {
+    justify-content: flex-start;
 }
