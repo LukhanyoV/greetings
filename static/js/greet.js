@@ -24,8 +24,9 @@ document.querySelector(".container").append(ul);
 const addMe = me => {
     let li = document.createElement("li");
     li.classList.add("span-list");
-    li.textContent = `${greetMe.getLength()}. ${me}`;
-    document.querySelector(".greetedUsers").appendChild(li);
+    let liText = `${greetMe.getLength()}. ${me}`
+    li.textContent = liText;
+    if(!(document.querySelector(".greetedUsers").innerHTML.includes(me))) document.querySelector(".greetedUsers").appendChild(li);
 }
 
 // populate the greeted users using localstorage
@@ -54,7 +55,7 @@ submit_greet.addEventListener("click", (e) => {
     output_greet.textContent = greetMe.makeGreet();
     // const users = getPersistedUsers() === null ? greetMe.getGreetedUsers() : getPersistedUsers(); // factory dies after reload
     counter.textContent = greetMe.getLength(); // return the length of the greeted users array
-    if(!["Invalid language specified!", "Invalid name given!", ""].includes(greetMe.getUserName()) && greetMe.getGreetedUsers()[greetMe.getLength()-1]===greetMe.getUserName()) addMe(greetMe.getUserName());
+    if(!["Invalid language specified!", "Invalid name given!", ""].includes(greetMe.getUserName())) addMe(greetMe.getUserName());
     persistUsers(greetMe.getGreetedUsers());
     greetMe.resetName();
 
