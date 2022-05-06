@@ -1,14 +1,17 @@
 
 body, html {
     background-color: pink;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
 }
 
-.container {
+.greet-form {
     display: flex;
-    justify-content: center;
+    /* justify-content: center;  */
     align-items: center;
     height: 80vh;
+    flex-direction: column;
+    width: 100%;
+    flex-wrap: wrap;
 }
 
 #myform {
@@ -78,8 +81,25 @@ body, html {
     text-align: center;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 688px) {
     .getname {
         flex-direction: column;
     }
+    .greet-form, .container {
+        flex-direction: column;
+    }
+}
+
+.greetedUsers {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    flex-wrap: wrap;
+}
+
+.span-list {
+    border: 1px solid saddlebrown;
+    background-color: white;
+    padding: 0.5em;
+    margin-right: 1em;
 }

@@ -15,9 +15,23 @@ const formReset = () => myform.reset(); // reset the form after submit
 const persistUsers = users => localStorage.setItem("greetedUsers", JSON.stringify(users));
 const getPersistedUsers = () => JSON.parse(localStorage.getItem("greetedUsers"));
 
+// create the unorded list
+let ul = document.createElement("div");
+ul.classList.add("greetedUsers");
+document.querySelector(".container").append(ul);
+
+// add me
+const addMe = me => {
+    let li = document.createElement("span");
+    li.classList.add("span-list");
+    li.textContent = `${me}`;
+    document.querySelector(".greetedUsers").appendChild(li);
+}
+
 // populate the greeted users using localstorage
 getPersistedUsers() !== null && getPersistedUsers().forEach(element => {
     greetMe.userGreeted(element);
+    addMe(element);
 });
 
 // reset output on load
@@ -41,7 +55,11 @@ submit_greet.addEventListener("click", (e) => {
     // const users = getPersistedUsers() === null ? greetMe.getGreetedUsers() : getPersistedUsers(); // factory dies after reload
     persistUsers(greetMe.getGreetedUsers());
     counter.textContent = greetMe.getLength(); // return the length of the greeted users array
+    if(!["Invalid language specified!", "Invalid name given!", ""].includes(greetMe.getUserName())) addMe(greetMe.getUserName());
     greetMe.resetName();
+
+
+    // add me
 
     // reset for fields
     formReset();
@@ -57,3 +75,4 @@ reset_greet.addEventListener("click", () => {
 });
 
 const clearMessage = () => setTimeout(() => output_greet.innerHTML = "&copy;LukhanyoV",3000);
+
