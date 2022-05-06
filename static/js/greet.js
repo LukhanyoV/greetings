@@ -16,13 +16,13 @@ const persistUsers = users => localStorage.setItem("greetedUsers", JSON.stringif
 const getPersistedUsers = () => JSON.parse(localStorage.getItem("greetedUsers"));
 
 // create the unorded list
-let ul = document.createElement("div");
+let ul = document.createElement("ul");
 ul.classList.add("greetedUsers");
 document.querySelector(".container").append(ul);
 
 // add me
 const addMe = me => {
-    let li = document.createElement("span");
+    let li = document.createElement("li");
     li.classList.add("span-list");
     li.textContent = `${me}`;
     document.querySelector(".greetedUsers").appendChild(li);
