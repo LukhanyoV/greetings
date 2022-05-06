@@ -17,7 +17,7 @@ const Greetings = () => {
     // get me
     const getUserName = () => userName;
     const getGreetLanguage = () => greetLanguage;
-    const getGreetedUsers = () => greeted.filter(x=>x!=="");
+    const getGreetedUsers = () => [...new Set(greeted.filter(x=>x!==""))];
 
     // use me
     const makeGreet = () => {

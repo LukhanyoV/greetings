@@ -54,7 +54,7 @@ submit_greet.addEventListener("click", (e) => {
     output_greet.textContent = greetMe.makeGreet();
     // const users = getPersistedUsers() === null ? greetMe.getGreetedUsers() : getPersistedUsers(); // factory dies after reload
     counter.textContent = greetMe.getLength(); // return the length of the greeted users array
-    if(!["Invalid language specified!", "Invalid name given!", "", ...getPersistedUsers()].includes(greetMe.getUserName())) addMe(greetMe.getUserName());
+    if(!["Invalid language specified!", "Invalid name given!", ""].includes(greetMe.getUserName()) && greetMe.getGreetedUsers()[greetMe.getLength()-1]===greetMe.getUserName()) addMe(greetMe.getUserName());
     persistUsers(greetMe.getGreetedUsers());
     greetMe.resetName();
 
